@@ -1,0 +1,6 @@
+{
+  "id": "que-es-waitgroup",
+  "level": 1,
+  "title": "¿Qué es un WaitGroup y cómo se usa?",
+  "content": "<h4>¿Qué es WaitGroup?</h4>\n<p><strong>WaitGroup</strong> es un tipo del paquete <code>sync</code> que permite esperar a que un conjunto de goroutines termine su ejecución.</p>\n<p><strong>Métodos:</strong></p>\n<ul>\n<li><code>Add(n)</code>: Añade n goroutines a esperar</li>\n<li><code>Done()</code>: Decrementa el contador (equivale a Add(-1))</li>\n<li><code>Wait()</code>: Bloquea hasta que el contador sea 0</li>\n</ul>\n<pre><code class=\"language-go\">import \"sync\"\n\nfunc main() {\n    var wg sync.WaitGroup\n    \n    for i := 0; i < 3; i++ {\n        wg.Add(1) // Añadir una goroutine\n        go func(id int) {\n            defer wg.Done() // Decrementar al terminar\n            fmt.Printf(\"Goroutine %d terminada\\n\", id)\n        }(i)\n    }\n    \n    wg.Wait() // Esperar a que todas terminen\n    fmt.Println(\"Todas las goroutines han terminado\")\n}</code></pre>\n<p><strong>Casos de uso:</strong></p>\n<ul>\n<li>Esperar a que múltiples workers terminen</li>\n<li>Coordinar tareas paralelas</li>\n<li>Evitar que el main() termine antes que las goroutines</li>\n</ul>\n<hr>\n"
+}

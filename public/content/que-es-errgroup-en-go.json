@@ -1,0 +1,6 @@
+{
+  "id": "que-es-errgroup-en-go",
+  "level": 2,
+  "title": "¿Qué es errgroup y cuándo usarlo?",
+  "content": "<h4>Errgroup</h4>\n<p><strong>errgroup</strong> del paquete <code>golang.org/x/sync/errgroup</code> proporciona sincronización, error handling ycancelación para grupos de goroutines.</p>\n<pre><code class=\"language-go\">import \"golang.org/x/sync/errgroup\"\n\nfunc main() {\n    g := new(errgroup.Group)\n    \n    var urls = []string{\n        \"https://api1.com\",\n        \"https://api2.com\",\n        \"https://api3.com\",\n    }\n    \n    // Ejecutar en paralelo\n    for _, url := range urls {\n        url := url // capturar variable\n        g.Go(func() error {\n            return fetch(url)\n        })\n    }\n    \n    // Esperar y obtener primer error\n    if err := g.Wait(); err != nil {\n        fmt.Println(\"Error:\", err)\n    }\n}</code></pre>\n<p><strong>Con contexto:</strong></p>\n<pre><code class=\"language-go\">g, ctx := errgroup.WithContext(ctx)\n\ng.Go(func() error {\n    return doWork(ctx)\n})\n\nif err := g.Wait(); err != nil {\n    fmt.Println(\"Error:\", err)\n}</code></pre>\n<p><strong>Casos de uso:</strong></p>\n<ul>\n<li>Ejecutar múltiples tareas en paralelo</li>\n<li>Manejar errores de múltiples goroutines</li>\n<li>Cancelar todas las tareas si una falla</li>\n<li>Limitar concurrencia con semaphore</li>\n</ul>\n"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "que-es-append-y-copy-en-go",
+  "level": 0,
+  "title": "¿Cómo usar append y copy en slices?",
+  "content": "<h4>append y copy</h4>\n<p>Funciones fundamentales para trabajar con slices:</p>\n<p><strong>append:</strong></p>\n<pre><code class=\"language-go\">s := []int{1, 2, 3}\ns = append(s, 4)          // [1 2 3 4]\ns = append(s, 5, 6, 7)   // [1 2 3 4 5 6 7]\n\n// append con otro slice\ns2 := []int{10, 20}\ns = append(s, s2...)     // [1 2 3 4 5 6 7 10 20]</code></pre>\n<p><strong>copy:</strong></p>\n<pre><code class=\"language-go\">src := []int{1, 2, 3, 4}\ndst := make([]int, len(src))\ncopy(dst, src)  // dst = [1 2 3 4]\n\n// copiar parte\ndst2 := make([]int, 2)\ncopy(dst2, src[2:]) // dst2 = [3 4]</code></pre>\n<p><strong>Patrones comunes:</strong></p>\n<pre><code class=\"language-go\">// Eliminar elemento\ns := []int{1, 2, 3, 4, 5}\ni := 2 // índice a eliminar\ns = append(s[:i], s[i+1:]...) // [1 2 4 5]\n\n// Insertar elemento\ns = append(s[:i], append([]int{99}, s[i:]...)...)\n\n// Preallocar para mejor performance\ns := make([]int, 0, 100) // capacity 100\nfor i := 0; i < 100; i++ {\n    s = append(s, i)\n}</code></pre>\n<p><strong>Importante:</strong></p>\n<ul>\n<li>append puede crear un nuevo slice si no hay capacidad</li>\n<li> siempre asignar el resultado de append</li>\n<li>copy retorna el número de elementos copyados</li>\n</ul>\n"
+}

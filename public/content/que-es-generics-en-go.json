@@ -1,0 +1,6 @@
+{
+  "id": "que-es-generics-en-go",
+  "level": 2,
+  "title": "¿Qué son los generics en Go (1.18+)?",
+  "content": "<h4>Generics en Go</h4>\n<p>Los <strong>generics</strong> (tipos genéricos) permiten escribir funciones y tipos que работают con любой тип de datos sin perder type safety.</p>\n<pre><code class=\"language-go\">// Función genérica\nfunc Sum[T int | float64](a, b T) T {\n    return a + b\n}\n\n// Usar\nresult := Sum(1, 2)       // int\nresult2 := Sum(1.5, 2.5)  // float64</code></pre>\n<p><strong>Type parameters:</strong></p>\n<pre><code class=\"language-go\">//约束 (constraints)\ntype Number interface {\n    int | float64\n}\n\nfunc SumAll[T Number](nums ...T) T {\n    var total T\n    for _, n := range nums {\n        total += n\n    }\n    return total\n}</code></pre>\n<p><strong>Tipos genéricos:</strong></p>\n<pre><code class=\"language-go\">type Stack[T any] struct {\n    items []T\n}\n\nfunc (s *Stack[T]) Push(item T) {\n    s.items = append(s.items, item)\n}\n\nfunc (s *Stack[T]) Pop() T {\n    item := s.items[len(s.items)-1]\n    s.items = s.items[:len(s.items)-1]\n    return item\n}</code></pre>\n<p><strong>Cuándo usar generics:</strong></p>\n<ul>\n<li>Funciones que trabajan con múltiples tipos</li>\n<li>Estructuras de datos tipo lista, mapa, etc.</li>\n<li>Evitar código repetido</li>\n</ul>\n"
+}

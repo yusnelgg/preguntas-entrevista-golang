@@ -1,0 +1,6 @@
+{
+  "id": "diferencia-entre-goroutine-y-thread",
+  "level": 1,
+  "title": "¿Cuál es la diferencia entre una goroutine y un thread?",
+  "content": "<h4>Goroutine vs Thread</h4>\n<p>Las <strong>goroutines</strong> y los <strong>threads</strong> son ambos mecanismos de ejecución concurrente, pero tienen diferencias importantes:</p>\n<table>\n<tr><th>Característica</th><th>Goroutine</th><th>Thread</th></tr>\n<tr><td>Tamaño inicial</td><td>~2 KB</td><td>~1 MB</td></tr>\n<tr><td>Gestión</td><td>Runtime de Go (GOMAXPROCS)</td><td>Sistema operativo</td></tr>\n<tr><td>Creación</td><td>Muy rápida (go keyword)</td><td>Lenta (syscall)</td></tr>\n<tr><td>Comunicación</td><td>Channels</td><td>Memoria compartida</td></tr>\n</table>\n<p><strong>Goroutines:</strong></p>\n<ul>\n<li>Son funciones que se ejecutan de manera concurrente</li>\n<li>El runtime de Go multiplexa múltiples goroutines sobre pocos threads del sistema</li>\n<li>Pueden crecer dinámicamente su stack</li>\n</ul>\n<pre><code class=\"language-go\">go func() {\n    fmt.Println(\"Ejecutando en goroutine\")\n}()</code></pre>\n<p><strong>Threads del SO:</strong></p>\n<ul>\n<li>Son unidades de ejecución gestionadas por el kernel del sistema operativo</li>\n<li>Cada thread tiene su propio stack fijo</li>\n<li>Crear muchos threads es costoso</li>\n</ul>\n<hr>\n"
+}
