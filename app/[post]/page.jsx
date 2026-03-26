@@ -16,12 +16,21 @@ export async function generateMetadata(props) {
   const { post } = params
 
   const { title, content } = await fetchPost(post)
+  const description = content.replace(/<[^>]*>/g, '').slice(0, 150) + '...'
 
   return {
-    title,
-    description: content,
+    title: `${title} - Go Wiki`,
+    description,
     openGraph: {
-      images: ['https://go.dev/blog/go-brand/og.png'],
+      title: `${title} - Go Wiki`,
+      description,
+      images: ['/og-image.svg'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} - Go Wiki`,
+      description,
+      images: ['/og-image.svg'],
     },
   }
 }

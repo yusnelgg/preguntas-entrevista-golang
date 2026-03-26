@@ -1,4 +1,4 @@
-export const Head = ({ title, description, ogImage }) => {
+export const Head = ({ title, description, ogImage = '/og-image.svg' }) => {
   return (
     <>
       <title>{title}</title>

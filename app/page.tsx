@@ -6,9 +6,20 @@ import { LEVELS } from './constants.js'
 
 export const metadata: Metadata = {
   title: 'Go Wiki - Preguntas típicas de entrevista con respuesta',
-  description: 'Preguntas típicas sobre Go con respuesta detallada',
+  description:
+    'Aprende Go con preguntas de entrevista detalladas en español. Goroutines, channels, defer, mutex, interfaces y más conceptos fundamentales.',
   openGraph: {
-    images: ['https://go.dev/blog/go-brand/og.png'],
+    title: 'Go Wiki - Preguntas de entrevista',
+    description:
+      'Aprende Go con preguntas de entrevista detalladas en español.',
+    images: ['/og-image.svg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Go Wiki - Preguntas de entrevista',
+    description:
+      'Aprende Go con preguntas de entrevista detalladas en español.',
+    images: ['/og-image.svg'],
   },
 }
 
@@ -46,7 +57,7 @@ export default function Page() {
           level={LEVELS.MEDIUM}
         />
       </section>
-        <h2 className='pb-4 mt-16 text-2xl font-bold text-blue-900 dark:text-blue-100 animate-fade-in animate-duration-500'>
+      <h2 className='pb-4 mt-16 text-2xl font-bold text-blue-900 dark:text-blue-100 animate-fade-in animate-duration-500'>
         Todas las preguntas sobre Go disponibles
       </h2>
       <ListOfQuestions />
