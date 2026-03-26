@@ -5,6 +5,7 @@ import { ListOfQuestions } from './components/ListOfQuestions.jsx'
 import { LEVELS } from './constants.js'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://go.wiki'),
   title: 'Go Wiki - Preguntas típicas de entrevista con respuesta',
   description:
     'Aprende Go con preguntas de entrevista detalladas en español. Goroutines, channels, defer, mutex, interfaces y más conceptos fundamentales.',
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Go Wiki - Preguntas de entrevista',
     description:
       'Aprende Go con preguntas de entrevista detalladas en español.',
-    images: ['/og-image.svg'],
+    images: [{ url: '/og-image.svg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',

@@ -1,18 +1,6 @@
 export async function Footer() {
   return (
     <footer className='w-full animate-fade-in animate-duration-700'>
-      <section className='max-w-6xl px-4 m-auto text-center md:text-right'>
-        <p>
-          <a
-            className='text-blue-900 hover:underline dark:text-blue-100'
-            href='https://github.com/tu-usuario/preguntas-entrevista-golang/issues/new'
-            target='_blank'
-            rel='noreferrer'
-          >
-            ¿Echas en falta una pregunta? ¡Avísanos!
-          </a>
-        </p>
-      </section>
 
       <div className='mt-4 border-t md:py-4 dark:bg-primary dark:text-white bg-slate-100 dark:border-t-secondry border-t-slate-100'>
         <section className='flex flex-col items-center justify-between w-full max-w-6xl gap-3 px-4 m-auto mx-auto md:flex-row'>
