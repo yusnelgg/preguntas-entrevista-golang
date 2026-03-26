@@ -8,7 +8,7 @@ export const BuyBook = () => {
     <div className='fixed m-4 bottom-4 right-4 z-20'>
       <div className='relative'>
         <a
-          href='https://leanpub.com/react-preguntas-tipicas'
+          href='https://leanpub.com/go-preguntas-tipicas'
           target='_blank'
           rel='noreferrer'
         >
@@ -17,7 +17,7 @@ export const BuyBook = () => {
           </strong>
           <BookCover>
             <Image
-              alt='Portada del libro de Preguntas de React'
+              alt='Portada del libro de Preguntas de Go'
               src='/book.png'
               width='136'
               height='176'

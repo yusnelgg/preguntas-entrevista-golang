@@ -6,7 +6,7 @@ import debounce from 'just-debounce-it'
 import Link from 'next/link'
 import { Combobox } from '@headlessui/react'
 
-import { ReactLogo } from './ReactLogo.jsx'
+import { GoLogo } from './GoLogo.jsx'
 import { SearchIcon } from './SearchIcon.jsx'
 import { Title } from './Title.jsx'
 import ThemeToggle from './ThemeToggle'
@@ -82,12 +82,12 @@ export function Header({ children }) {
         <div className='flex gap-x-2'>
           <Title isHome={isHome} />
 
-          {!isHome && <ReactLogo animated={false} size='small' />}
+          {!isHome && <GoLogo animated={false} size='small' />}
 
           {isHome && (
             <div className='absolute p-2 overflow-hidden -right-4 md:right-0 top-6 dark:invert'>
               <div className='translate-x-1/3 sm:translate-x-0'>
-                <ReactLogo />
+                <GoLogo />
               </div>
             </div>
           )}
@@ -111,7 +111,7 @@ export function Header({ children }) {
               results.length && 'focus:border-b-0 focus:rounded-b-none'
             }`}
             onChange={debouncedHandleChange}
-            placeholder='Introduce aquí tu pregunta sobre React'
+            placeholder='Introduce aquí tu pregunta sobre Go'
             type='search'
             displayValue={element => element?.text}
           />

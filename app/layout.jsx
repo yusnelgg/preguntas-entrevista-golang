@@ -6,9 +6,6 @@ import ThemeProvider from '@/provider/ThemeProvider.jsx'
 
 import { Header } from './components/Header.jsx'
 import { Footer } from './components/Footer.jsx'
-import { BuyBook } from './components/BuyBook.jsx'
-import { Stars } from './components/Stars.jsx'
-import { Suspense } from 'react'
 
 const spaceGrotesk = SpaceGrotesk({
   weight: ['400', '700'],
@@ -29,15 +26,10 @@ export default async function RootLayout({ children }) {
                 <div className='absolute top-0 scale-150 rounded-full bg-blue-gradient-radial w-96 h-96 left-14 opacity-20' />
               </div>
               <main className='relative flex-1 block w-full max-w-6xl p-4 pb-32 m-auto'>
-                <Header>
-                  <Suspense fallback={<Stars empty />}>
-                    <Stars />
-                  </Suspense>
-                </Header>
+                <Header />
                 {children}
               </main>
               <Footer />
-              <BuyBook />
             </div>
           </ThemeProvider>
         </ThemeContextProvider>

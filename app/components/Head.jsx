@@ -10,8 +10,8 @@ export const Head = ({ title, description, ogImage }) => {
       <meta property='og:title' content={title} />
       <meta property='og:description' content={description} />
       <meta property='og:image' content={ogImage} />
-      <meta property='og:url' content='https://reactjs.wiki' />
-      <meta property='og:site_name' content='React.js Wiki' />
+      <meta property='og:url' content='https://go.wiki' />
+      <meta property='og:site_name' content='Go Wiki' />
       <meta property='og:type' content='website' />
       <meta property='og:locale' content='es_ES' />
       <meta name='twitter:card' content='summary_large_image' />

@@ -5,7 +5,7 @@ export async function Footer() {
         <p>
           <a
             className='text-blue-900 hover:underline dark:text-blue-100'
-            href='https://github.com/midudev/preguntas-entrevista-react/issues/new'
+            href='https://github.com/tu-usuario/preguntas-entrevista-golang/issues/new'
             target='_blank'
             rel='noreferrer'
           >
@@ -17,10 +17,10 @@ export async function Footer() {
       <div className='mt-4 border-t md:py-4 dark:bg-primary dark:text-white bg-slate-100 dark:border-t-secondry border-t-slate-100'>
         <section className='flex flex-col items-center justify-between w-full max-w-6xl gap-3 px-4 m-auto mx-auto md:flex-row'>
           <p className='flex items-center text-sm opacity-75 gap-x-2'>
-            Desarrollado con ❤️ por{' '}
+            Fork del proyecto de{' '}
             <a
-              className='underline'
-              href='https://midu.dev/'
+              className='underline font-bold'
+              href='https://github.com/midudev/preguntas-entrevista-react'
               target='_blank'
               rel='noreferrer'
             >
@@ -35,7 +35,7 @@ export async function Footer() {
                 target='_blank'
                 rel='noreferrer'
               >
-                ¡Contribuye!
+                ¡Contribuye al original!
               </a>
             </p>
           </div>

@@ -1,0 +1,6 @@
+{
+  "id": "que-es-una-goroutine",
+  "level": 0,
+  "title": "¿Qué es una goroutine?",
+  "content": "<h4>¿Qué es una goroutine?</h4>\n<p>Una <strong>goroutine</strong> es una función que se ejecuta de manera concurrente dentro del runtime de Go. Es más ligera que un hilo del sistema operativo (thread) y su creación tiene un costo mínimo.</p>\n<p>Para iniciar una goroutine, simplemente usamos la palabra clave <code>go</code> delante de una función:</p>\n<pre><code class=\"language-go\">go func() {\n    fmt.Println(\"Ejecutando en una goroutine\")\n}()</code></pre>\n<p>Características principales:</p>\n<ul>\n<li><strong>Ligera:</strong> Una goroutine ocupa solo ~2KB de memoria inicial</li>\n<li><strong>Planificada por Go:</strong> El runtime de Go se encarga de multiplexar múltiples goroutines sobre pocos hilos del sistema</li>\n<li><strong>Comunicación:</strong> Las goroutines se comunican mediante channels</li>\n</ul>\n<hr>\n"
+}

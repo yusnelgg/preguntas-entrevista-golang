@@ -20,7 +20,9 @@ export async function generateMetadata(props) {
   return {
     title,
     description: content,
-    ogImage: 'https://reactjs.wiki/og.png',
+    openGraph: {
+      images: ['https://go.dev/blog/go-brand/og.png'],
+    },
   }
 }
 

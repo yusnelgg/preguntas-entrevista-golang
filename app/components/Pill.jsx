@@ -4,7 +4,7 @@ const LITERALS = {
   [LEVELS.EASY]: 'Principiante',
   [LEVELS.MEDIUM]: 'Intermedio',
   [LEVELS.HARD]: 'Experto',
-  [LEVELS.ERRORS]: 'Errores típicos de React',
+  [LEVELS.ERRORS]: 'Errores típicos de Go',
 }
 
 const COLORS = {
