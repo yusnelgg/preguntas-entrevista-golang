@@ -9,7 +9,7 @@
   "scripts": {
     "markdown:lint": "node scripts/lint.mjs",
     "dev": "next dev --turbopack",
-    "build": "node scripts/markdownToJson.mjs && next build",
+    "build": "next build",
     "start": "next start",
     "prettier": "prettier --write .",
     "lint": "eslint ."
